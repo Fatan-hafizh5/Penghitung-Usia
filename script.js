@@ -11,17 +11,11 @@ if (tahunLahir === "") {
   hasil.innerHTML = "Isi dulu";
   hasil.classList.add("danger");
   return;
-} 
-
-// Perbaikan: Gunakan >= bukan =>
-else if (tahunLahir >= tahunSekarang) {
+} else if (tahunLahir >= tahunSekarang) {
   hasil.innerHTML = "Tahun tidak valid (Masa Depan)";
   hasil.classList.add("danger");
   return;
-} 
-
-// Logika: Jika tahun lahir kurang dari 1900 (bukan 1990, kecuali targetnya memang milenial)
-else if (tahunLahir < 1900) {
+} else if (tahunLahir < 1900) {
   hasil.innerHTML = "Tahun terlalu lama";
   hasil.classList.add("danger");
   return;

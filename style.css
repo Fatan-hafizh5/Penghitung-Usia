@@ -1,6 +1,7 @@
-*,html,body {
+*, html, body {
   padding: 0;
   margin: 0;
+  box-sizing: border-box; /* Added for better layout control */
   font-family: 'Poppins', sans-serif;
 }
 
@@ -17,18 +18,23 @@
 
 .container h1 {
   padding: 10px;
+  /* Fixed the animation name to match the keyframe below */
+  animation: bouncing 3s infinite ease-in-out; 
 }
+
 .container label {
   padding: 10px;
 }
 
 button {
-  padding: 10px;
+  padding: 10px 20px;
   background-color: #ff3d3d;
   border: none;
   border-radius: 5px;
   color: white;
-  
+  cursor: pointer;
+  box-shadow: 0 0 8px 1px rgba(255, 0, 0, 0.5);
+  transition: background-color 0.3s ease; /* Smooth hover transition */
 }
 
 button:hover {
@@ -36,22 +42,41 @@ button:hover {
 }
 
 .danger {
-  color: #ff4d4d; /* Merah yang lebih terang */
+  color: #ff4d4d;
   font-weight: bold;
   margin-top: 10px;
 }
 
 input {
-  background: rgba(255, 255, 255, 0.1); /* Putih tipis banget */
+  background: rgba(255, 255, 255, 0.1);
   border: 1px solid rgba(255, 255, 255, 0.2);
   color: white;
   padding: 12px;
   border-radius: 8px;
   outline: none;
+  margin-bottom: 15px; /* Added spacing */
+  transition: all 0.3s ease;
 }
 
-/* Saat diklik (focus), warnanya sedikit terang */
 input:focus {
   background: rgba(255, 255, 255, 0.2);
-  border-color: #ff3d3d; /* Samakan dengan warna tombol kamu */
+  border-color: #ff3d3d;
+}
+
+/* Keyframe definition */
+@keyframes bouncing {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+.ball {
+  width: 50px;
+  height: 50px;
+  background-color: #ff3d3d;
+  border-radius: 50%;
+  animation: bouncing 1s infinite ease-in-out;
 }
